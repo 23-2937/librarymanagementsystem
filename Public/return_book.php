@@ -18,8 +18,8 @@ $stmt = $conn->prepare("SELECT book_id FROM borrowed_books WHERE id =
 $stmt->bind_param("i", $borrow_id);
 $stmt->execute();
 $stmt->bind_result($book_id);
-$stmt->fetch();
-$stmt->close();
+$stmt->fetch();   
+$stmt->close();  
 // Update the returned_at field in the borrowed_books table
 $stmt = $conn->prepare("UPDATE borrowed_books SET returned_at = NOW()
 WHERE id = ?");
